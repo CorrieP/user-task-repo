@@ -10,3 +10,12 @@
 - Package the application
 
 `$ ./gradlew bootjar`
+
+## Run
+
+`$ docker-compose build app`
+`$ docker-compose up`
+
+## Verify the application is running
+
+> Application listens on port 8080
