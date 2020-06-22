@@ -2,8 +2,6 @@ package com.black.swan.assessment.dto.task;
 
 import com.black.swan.assessment.persistence.Task;
 import com.black.swan.assessment.persistence.TaskStatus;
-import com.black.swan.assessment.persistence.User;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
