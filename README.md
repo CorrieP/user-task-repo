@@ -1,7 +1,7 @@
 # Spring Boot Assessment
-Basic implementation showcasing Spring Boot, JPA, REST, DTO, CRON components and Flyway Db Migrations<br/>
-Used Lombok for cleaner code<br/>
-Basic Docker containerization for testing (testcontainers) and local testing.<br/>
+Basic implementation showcasing Spring Boot, JPA, REST, DTO, CRON components and Flyway Db Migrations  
+Used Lombok for cleaner code  
+Basic Docker containerization for testing (testcontainers) and local testing.  
 
 ## Requirements
 - gradle 6.0.1
@@ -11,13 +11,13 @@ Basic Docker containerization for testing (testcontainers) and local testing.<br
 
 ## Package the application
 - Run tests
-`$ ./gradlew test`<br/>
+`$ ./gradlew test`  
 - Package the application
 `$ ./gradlew bootjar`
 
 ## Run
 
-`$ docker-compose build app`
+`$ docker-compose build app`  
 `$ docker-compose up`
 
 ## Verify the application is running
