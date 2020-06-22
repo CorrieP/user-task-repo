@@ -45,7 +45,7 @@ public class TaskController {
 
     @PutMapping("/user/{user_id}/task/{task_id}")
     OutputTaskDto updateTask(@RequestBody UpdateTaskDto updateTask, @PathVariable Long user_id, @PathVariable Long task_id) {
-        if (userRepo.findById(user_id) == null ) throw new UserNotFoundException(user_id);
+        if (!userRepo.findById(user_id).isPresent()) throw new UserNotFoundException(user_id);
         return repository.findById(task_id)
                 .map(task -> {
                     task.modified = OffsetDateTime.now();
@@ -58,7 +58,7 @@ public class TaskController {
     @DeleteMapping("/user/{user_id}/task/{task_id}")
     @ResponseStatus( HttpStatus.OK )
     ResponseEntity deleteTask(@PathVariable Long user_id, @PathVariable Long task_id) {
-        if (userRepo.findById(user_id) == null ) throw new UserNotFoundException(user_id);
+        if (!userRepo.findById(user_id).isPresent()) throw new UserNotFoundException(user_id);
         repository.deleteById(task_id);
         return new ResponseEntity(HttpStatus.OK);
     }

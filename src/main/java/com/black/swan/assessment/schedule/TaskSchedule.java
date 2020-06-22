@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
 @Component
 @Transactional
 public class TaskSchedule {
-    private Logger log = LoggerFactory.getLogger(TaskSchedule.class);
+    private final Logger log = LoggerFactory.getLogger(TaskSchedule.class);
 
     private final TaskRepository repository;
 

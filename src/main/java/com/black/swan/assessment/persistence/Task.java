@@ -1,7 +1,6 @@
 package com.black.swan.assessment.persistence;
 
 import com.black.swan.assessment.dto.task.OutputTaskDto;
-import com.black.swan.assessment.dto.user.OutputUserDto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.ResultCheckStyle;
@@ -11,7 +10,6 @@ import org.springframework.beans.BeanUtils;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;
-import java.util.Objects;
 
 @Data
 @EqualsAndHashCode(callSuper=true)

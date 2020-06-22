@@ -11,12 +11,12 @@ import java.util.Optional;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
     @Query("SELECT new com.black.swan.assessment.dto.task.OutputTaskDto(t.id, t.name, t.description, t.dateTime, t.status) FROM Task t WHERE t.user.id = :userId")
-    public List<OutputTaskDto> findTasksByUserId(Long userId);
+    List<OutputTaskDto> findTasksByUserId(Long userId);
 
     @Query("SELECT new com.black.swan.assessment.dto.task.OutputTaskDto(t.id, t.name, t.description, t.dateTime, t.status) FROM Task t WHERE t.id = :taskId and t.user.id = :userId")
-    public Optional<OutputTaskDto> findTaskByUserAndTaskId(Long userId, Long taskId);
+    Optional<OutputTaskDto> findTaskByUserAndTaskId(Long userId, Long taskId);
 
     @Query("SELECT t FROM Task t WHERE t.status = com.black.swan.assessment.persistence.TaskStatus.PENDING and t.dateTime <= :dateTime")
-    public List<Task> findPendingExpiredTasks(OffsetDateTime dateTime);
+    List<Task> findPendingExpiredTasks(OffsetDateTime dateTime);
 
 }

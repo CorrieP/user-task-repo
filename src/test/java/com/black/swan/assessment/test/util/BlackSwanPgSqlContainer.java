@@ -18,7 +18,7 @@ public class BlackSwanPgSqlContainer {
     static class Initializer implements
             ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-        static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>();
+        static final PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>();
 
         private static void startContainers() {
             Startables.deepStart(Stream.of(postgres)).join();
